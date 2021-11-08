@@ -3,7 +3,8 @@ const app = express();
 const connect = require("./src/config/db");
 app.use(express.json());
 //making connection
-
+// models or schemas
+const User = require('./src/models/user.model');
 app.listen(2247, (req, res) => {
   try {
     connect();
