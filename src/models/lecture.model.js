@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const lectureSchema = new mongoose.Schema(
-  {
+  { 
     title: { required: true, type: String },
     instructor: { required: true, type: String },
     batch: { required: true, type: String },
