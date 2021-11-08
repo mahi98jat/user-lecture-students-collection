@@ -6,9 +6,10 @@ const router = express.Router();
 router.post("/", (req, res) => {
   try {
     const user = User.findOne({ name: req.body.instructor });
-   // console.log(user);
+    // console.log(user);
 
     Lecture.create({
+      lecture_id: req.body.lecture_id,
       title: req.body.title,
       instructor: req.body.instructor,
       batch: req.body.batch,
@@ -21,8 +22,14 @@ router.post("/", (req, res) => {
   }
 });
 
-router.post("/", (req, res) => {
-  console.log("getting some data here");
+router.get("/", (req, res) => {
+  try {
+    const data = Lecture.find().lean().exec();
+
+    return res.status(200).send(data);
+  } catch (err) {
+    return res.status(201).send("some err occurs");
+  }
 });
 
 module.exports = router;
