@@ -31,5 +31,14 @@ router.get("/", (req, res) => {
     return res.status(201).send("some err occurs");
   }
 });
+router.get("/:id", (req, res) => {
+    try {
+      const data = Lecture.find({$lecture_id:req.params.id}).lean().exec();
+  
+      return res.status(200).send(data);
+    } catch (err) {
+      return res.status(201).send("some err occurs");
+    }
+  });
 
 module.exports = router;
