@@ -1,10 +1,22 @@
 const express = require("express");
+const bodyParser = require("body-parser");
+
 const app = express();
 const connect = require("./src/config/db");
+
+const userControllers = require("./src/controllers/userController");
+const studentControllers = require("./src/controllers/studentController");
+const lectureControllers = require("./src/controllers/lectureContoller");
 app.use(express.json());
+
 //making connection
 // models or schemas
-const User = require('./src/models/user.model');
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use("/users", userControllers);
+app.use("/students", studentControllers);
+app.use("/lecture", lectureControllers);
+
 app.listen(2247, (req, res) => {
   try {
     connect();
