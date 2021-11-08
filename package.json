@@ -1,0 +1,22 @@
+{
+  "name": "user-lecture-students-collection",
+  "version": "1.0.0",
+  "description": "unit-5 backend evaluation",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahi98jat/user-lecture-students-collection.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mahi98jat/user-lecture-students-collection/issues"
+  },
+  "homepage": "https://github.com/mahi98jat/user-lecture-students-collection#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
